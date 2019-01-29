@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<title>JSDoc</title>
+<script>
+    "use strict";
+
+    let num = +prompt("Какую сумму вы хотите положить в банк?");
+    let correctWord = getDeclension(num, "рубль", "рубля", "рублей");
+
+    /**
+     * Получение правильного склонения существительного
+     * @param {number} num число
+     * @param {string} one правильное склонение для 1
+     * @param {string} two правильное склонение для 2, 3, 4
+     * @param {string} five правильное склонение для всех остальных чисел
+     * @returns {string} Возвращает правильное сколение слова в зависимости от числа
+     */
+    function getDeclension(num, one, two, five) {
+        const n = num % 100;
+        const n10 = n % 10;
+
+        if (n >= 5 && n <=20) {
+            return five;
+        } else if (n10 > 1 && n10 <5) {
+            return two;
+        } else if (n10 === 1) {
+            return one;
+        } else {
+            return five;
+        }
+    }
+    alert(`Ваша сумма в ${number} ${correctWord} успешно зачислена.`);
+</script>

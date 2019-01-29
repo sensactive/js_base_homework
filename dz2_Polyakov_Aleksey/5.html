@@ -1,0 +1,60 @@
+<meta charset="UTF-8">
+<title>JSDoc</title>
+<script>
+    "use strict";
+
+    /**
+     * Функция складывает два числа.
+     * @param {number} a первое число.
+     * @param {number} b второе число.
+     * @returns {number} вернет результат сложения двух чисел.
+     */
+    function sum(a, b) {
+        return a + b;
+    }
+
+    /**
+     * Функция вычитает одно число из другого.
+     * @param {number} a первое число.
+     * @param {number} b второе число.
+     * @returns {number} вернет результат вычитания b из a.
+     */
+    function sub(a, b) {
+        return a - b;
+    }
+    /**
+     * Функция делит одно число на другое.
+     * @param {number} a делимое число.
+     * @param {number} b делитель числа.
+     * @returns {number} вернет результат деления a на b.
+     */
+    function div(a, b) {
+        return a / b;
+    }
+    /**
+     * Функция умножает одно число на другое.
+     * @param {number} a первое число.
+     * @param {number} b второе число.
+     * @returns {number} вернет результат умножения a на b.
+     */
+    function mult(a, b) {
+        return a * b;
+    }
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+            case "сложение":
+                return sum(arg1, arg2);
+            case "разность":
+                return sub(arg1, arg2);
+            case "деление":
+                return div(arg1, arg2);
+            case "умножение":
+                return mult(arg1, arg2);
+        }
+    }
+    console.log(mathOperation(10, 2, "сложение"));
+    console.log(mathOperation(10, 2, "разность"));
+    console.log(mathOperation(10, 2, "деление"));
+    console.log(mathOperation(10, 2, "умножение"));
+
+</script>

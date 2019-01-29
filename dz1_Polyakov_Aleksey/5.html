@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+    "use strict";
+
+    function summ(num) {
+        let a = (num % 10);
+        let b = parseInt(num / 10 % 10);
+        let c = parseInt(num / 100 % 10);
+        let sum = a + b + c;
+        return sum;
+    }
+
+    let ticket = +prompt("Введите номер билета из 6-ти цифр");
+    let a = summ(parseInt(ticket / 1000));
+    let b = summ(ticket % 1000);
+    if (a === b) {
+        console.log("Ваш билет СЧАСТЛИВЫЙ!!!");
+    } else {
+        console.log("Увы, Вам не повезло :(");
+    }
+</script>
