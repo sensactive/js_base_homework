@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    "use strict";
+
+    // const arr = [
+    //     [2, 4, 6],
+    //     [1, 5, 10],
+    //     [7, 4, 1]
+    // ];
+
+    const arr = [
+        [-2, -4, -6516],
+        [-1, -5, -10],
+        [-7, -4, -1]
+    ];
+
+    /**
+     * Функция складывает два числа.
+     * @param {number} accumulator первое число.
+     * @param {number} currentValue второе число.
+     * @returns {number} вернет сумму двух чисел.
+     */
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    let maxValue = arr[0].reduce(reducer);
+    let indx = 0;
+
+    // Поиск индекса массива с макксимальной суммой всех значений
+    for (let i in arr) {
+        let arrSum = arr[i].reduce(reducer);
+        if (maxValue < arrSum) {
+            maxValue = arrSum;
+            indx = i;
+        }
+    }
+
+    // Поиск наименьшего значения в массиве с наибольшей суммой значений
+    let minValueInArray = arr[indx][0];
+    for (let value of arr[indx]) {
+        if (value < minValueInArray) {
+            minValueInArray = value;
+        }
+    }
+    console.log(indx);
+    console.log(minValueInArray)
+
+</script>
+</body>
+</html>

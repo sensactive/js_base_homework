@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    "use strict";
+
+    const num = parseInt(prompt(`Введите число от 0 до 999.`));
+    const objOfNum = {};
+    if (Number.isInteger(num) && (num >= 0 && num < 1000)) {
+        objOfNum.firstDigit = num % 10;
+        objOfNum.secondDigit = parseInt(num / 10 % 10);
+        objOfNum.thirdDigit = parseInt(num / 100 % 10);
+    } else {
+        console.log(`Вы ввели неправильное значение. Нужно целое число от 0 до 999`)
+    }
+    console.log(objOfNum);
+
+</script>
+</body>
+</html>

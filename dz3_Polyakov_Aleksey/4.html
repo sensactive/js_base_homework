@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    "use strict";
+
+    let num = parseInt(prompt("Введите число до которого нужно найти простые числа")) // до 100000 лучше пробовать
+
+
+    //Решето Эратосфена
+    let a = [];
+    for (let i = 0; i < (num + 1); a.push(i), i++) {}
+    a[1] = 0;
+
+    let i = 2;
+    while (i < (num + 1)) {
+        if (a[i] !== 0) {
+            console.log(a[i]);
+            for (let j = i; j < (num + 1); j += i) {
+                a[j] = 0;
+            }
+        }
+        i++;
+    }
+</script>
+</body>
+</html>

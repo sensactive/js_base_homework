@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    "use strict";
+
+    let a = "x";
+    for (let i = 0; i < 20; i++) {
+        console.log(a);
+        a += "xx";
+    }
+
+    for (let i = 0, a = "x"; i < 20; console.log(a), a += "xx", i++) {}
+
+    for (let a = "x"; a.length < 40; console.log(a), a += "xx") {}
+</script>
+</body>
+</html>
